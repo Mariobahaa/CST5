@@ -6,10 +6,13 @@
         </title>
     </head>
     <body>
+        <a href="T3.html" onclick="openWindow()">Open Scrollable tab</a>
         <script>
             var win;
+            function openWindow(){
             win = open("scroll.html", "", "width=300,height=200,scorllbars=1");
             win.focus();
+            }
             
         </script>
     

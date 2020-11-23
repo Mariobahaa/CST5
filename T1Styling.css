@@ -1,0 +1,69 @@
+.img{
+ 
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+    
+
+}
+
+body{
+    background-color: bisque;
+}
+
+
+h3.righta
+{
+    text-align: end;
+    color: brown;
+    font-family: fantasy;
+    display: block;
+}
+
+
+sup{
+    display: inline;
+}
+
+h1,h2,h3,h4,h5,h6{
+    text-align: center;
+}
+
+
+h4{
+    font-style:  italic;
+}
+
+h3{
+    font-weight:normal;
+}
+
+
+ol,ul,{
+    text-align: left;
+}
+
+.cont{
+    text-align: left;
+    text-decoration: underline;
+}
+
+
+#nxt {
+    text-align: right;
+    text-align: end;
+}
+
+#top {
+   text-align:start;
+
+}
+
+.cent{
+    text-align: center;
+}
+
+#mlto{
+    width: 100px;
+    height: 60px;
+}
