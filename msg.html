@@ -1,0 +1,24 @@
+<!Doctype html>
+<html>
+    <head>
+        <title>Message </title>
+    </head>
+    <body>
+        <script>
+            var str = "This is a message <br> This window will terminate";
+            var index = 0;
+            var timer = setInterval(function (){
+                window.focus();
+                if(index < str.length){
+                document.write(str[index]);
+                index++;
+                }
+                else 
+                {
+                    clearInterval(timer);
+                    window.close();
+                }
+            },200);
+        </script>
+    </body>
+</html>
