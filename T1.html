@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            task 1.1
+        </title>
+    </head>
+    <body>
+        <input type= "button" value="Stop" id = "stop" onclick="stop()">
+        <script>
+            var win2 = window.open()
+            var win = open("flyingwin.html", "?user=mario", "width=250,height=250");
+            win.focus();
+            
+            var x = 20; var y=50;
+            timer = setInterval(function (){
+                if(!win.closed)
+                    {
+                        win.moveBy(x,y);
+                        win.focus();
+                    }
+            },500);
+            
+            revTimer = setInterval(function (){
+                 if(!win.closed)
+                    {
+                        x*= -1;
+                        y*=-1;
+                    }
+            },5000)
+            
+            function stop(){
+                clearInterval(timer);
+                win.focus();
+            }
+        </script>
+    
+    </body>
+</html>
