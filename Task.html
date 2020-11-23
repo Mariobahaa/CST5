@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Untitled Document</title>
+</head>
+
+<body>
+    <input type="button" value="1" onclick="addVAl(this)">
+    <input type="button" value=" 2 " onclick="addVAl(this)">
+    <input type="button" value=" 3 " onclick="addVAl(this)">
+    <input type="button" value=" 4 " onclick="addVAl(this)">
+    <input type="button" value=" 5 " onclick="addVAl(this)">
+    <input type="button" value=" 6 " onclick="addVAl(this)">
+    <input type="text" id="txt1">
+    <button onclick="clearVal()">C</button>
+    <button onclick="eraseVal()">&lt;&lt;</button>
+    <script>
+        function addVAl(val) {
+            document.querySelector("#txt1").value += val.value.trim()
+        }
+        
+        function clearVal(){
+            document.getElementById("txt1").value="";
+        }
+        
+        function eraseVal(){
+               //document.write( document.getElementById("txt1").value.substr(0,document.getElementById("txt1").value.length-1));
+              document.getElementById("txt1").value =document.getElementById("txt1").value.substr(0,document.getElementById("txt1").value.length-1);
+        }
+    </script>
+</body>
+
+</html>
