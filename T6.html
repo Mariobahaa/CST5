@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            task 3.2
+        </title>
+    </head>
+    <body>
+        <h3>Showing Pics</h3>
+        <hr>
+        <input type= "button" value="Next" id = "Next" onclick="next()">
+        <input type= "button" value="Slideshow" id = "Slideshow" onclick="slideshow()">
+        <input type= "button" value="Stop" id = "Stop" onclick="stop()">
+        <input type= "button" value="Previous" id = "Previous" onclick="previous()">
+        <br>
+        <br>
+        <img src ="./Slideshow/1.jpg" width="400" height="300" id="img">
+
+        <script>
+            var pic=1;
+            function next(){
+                if(pic<6)
+                {
+                    pic++;
+                    document.querySelector("#img").src =("./Slideshow/"+pic+".jpg");
+                }
+            }
+                                                          
+            function previous(){
+                if(pic>1)
+                {
+                    pic--;
+                    document.querySelector("#img").src =("./Slideshow/"+pic+".jpg");
+                }
+            }   
+            
+            var flag = false;
+            var slidesh;
+            
+                function slideshow(){
+                flag = true;
+                slidesh = setInterval(function(){
+                pic++;
+                if(pic>6) {pic = 1;}
+                document.querySelector("#img").src =("./Slideshow/"+pic+".jpg");
+            },1000);
+                }
+            
+            function stop(){
+                if(flag){
+                    flag = false;
+                    clearInterval(slidesh);
+                }
+            }
+        </script>
+    
+    </body>
+</html>
