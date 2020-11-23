@@ -4,6 +4,18 @@
         <title>Welcome Screen</title>
     </head>
     <body>
-        
+        <script>
+            var url = location.search;
+            url = url.substr(1,url.length-1);
+            var atts = url.split("&");
+            
+            document.write("Welcome ".fontcolor("green").bold()+ atts[0].split("=")[1].replace("+"," "));
+            document.write("<br>Address: ".fontcolor("green").bold()+ atts[1].split("=")[1].replace("+"," "));
+            document.write("<br>Mobile Number: ".fontcolor("green").bold()+ atts[2].split("=")[1]);
+            document.write("<br>E-mail: ".fontcolor("green").bold()+ atts[3].split("=")[1].replace("%40","@"));
+            document.write("<br>Gender: ".fontcolor("green").bold()+ atts[4].split("=")[1]);
+            //document.write(atts);
+            
+        </script>
     </body>
 </html>
