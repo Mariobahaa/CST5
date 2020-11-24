@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Task 3.3</title>
+    </head>
+    <!--link href="T1Styling.css" rel="stylesheet" type="text/css" -->
+    <body>
+        <br>
+      
+        <div align="center">
+            <!-- for spacing between images put each in a span and set margin to a value-->
+            <img src="./memoryGame/Moon.gif" id = "1" onclick="show(1)">
+            <img src="./memoryGame/Moon.gif" id = "11" onclick="show(11)">
+            <img src="./memoryGame/Moon.gif" id = "22" onclick="show(22)">
+            <img src="./memoryGame/Moon.gif" id = "55" onclick="show(55)">
+            <br>
+            <img src="./memoryGame/Moon.gif" id="33" onclick="show(33)">
+            <img src="./memoryGame/Moon.gif" id="44" onclick="show(44)">
+            <img src="./memoryGame/Moon.gif" id="5" onclick="show(5)">
+            <img src="./memoryGame/Moon.gif" id="2" onclick="show(2)">
+            <br>
+            <img src="./memoryGame/Moon.gif" id="4" onclick="show(4)">
+            <img src="./memoryGame/Moon.gif" id="66" onclick="show(66)">
+            <img src="./memoryGame/Moon.gif" id="3" onclick="show(3)">
+            <img src="./memoryGame/Moon.gif" id="6" onclick="show(6)">
+            <br>
+            <script>
+                var shown =0;
+                var prev = 0;
+                var crossed = 12;
+                
+                function show(p){
+                    var x=p;
+                    if(p>10)p%=10;  
+                    document.getElementById(x).src="./memoryGame/"+p+".gif";                    
+                    shown++;
+                    if(shown == 1){prev=x;}
+                    else if(shown==2) {
+                        if(p%10==prev%10){
+                            crossed-=2;
+                        }
+                        else{
+                            var timer = setTimeout(function (){
+                                document.getElementById(prev).src= "./memoryGame/Moon.gif";
+                                document.getElementById(p).src= "./memoryGame/Moon.gif";
+                                document.getElementById(x).src = "./memoryGame/Moon.gif";
+                                       },500);
+                        }
+                        //prev=0;
+                        shown=0;
+                    }
+                    if(crossed<=0){setTimeout(game,1000);}
+                }
+                function game(){
+                    alert("Congrats!");
+                    location.reload();
+                }
+     
+            </script>
+        </div>
+    </body>
+</html>
