@@ -32,6 +32,9 @@
                 function show(p){
                     var x=p;
                     if(p>10)p%=10;  
+                    var source = document.getElementById(x).src;
+                    source = source.substr(source.length-8,8);
+                    if(source== "Moon.gif"){
                     document.getElementById(x).src="./memoryGame/"+p+".gif";                    
                     shown++;
                     if(shown == 1){prev=x;}
@@ -50,6 +53,7 @@
                         shown=0;
                     }
                     if(crossed<=0){setTimeout(game,1000);}
+                    }
                 }
                 function game(){
                     alert("Congrats!");
