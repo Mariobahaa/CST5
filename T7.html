@@ -15,9 +15,15 @@
             <img src="./marbels/marble1.jpg" onmouseover="stop()" onmouseout="tick()">
             <img src="./marbels/marble1.jpg" onmouseover="stop()" onmouseout="tick()">
             <img src="./marbels/marble1.jpg" onmouseover="stop()" onmouseout="tick()">
+            <br>
+            <br>
+            <br>
+            <input type="button" value="<" onclick="decelerate()">
+            <input type="button" value=">" onclick="accelerate()">
             <script>
                 var ticker;
                 var pic = 1;
+                var speed = 1000;
                 
                 tick();
                 
@@ -28,11 +34,23 @@
                     document.querySelectorAll("img")[pic].src="./marbels/marble3.jpg";
                     pic++;
                     pic%=5;
-                },1000);
+                },speed);
                 }
                 
                 function stop(){
                     clearInterval(ticker);
+                }
+                
+                function accelerate(){
+                    stop();
+                    if(speed>100){speed-=100;}
+                    tick();
+                }
+                
+                 function decelerate(){
+                     stop();
+                    if(speed<2000){speed+=100;}
+                     tick();
                 }
             </script>
         </div>
