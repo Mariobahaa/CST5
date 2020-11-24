@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Task 3.3</title>
+    </head>
+    <!--link href="T1Styling.css" rel="stylesheet" type="text/css" -->
+    <body>
+        <br>
+        <br>
+        <br>
+        <div align="center">
+            <img src="./marbels/marble3.jpg" onmouseover="stop()" onmouseout="tick()">
+            <img src="./marbels/marble1.jpg" onmouseover="stop()" onmouseout="tick()">
+            <img src="./marbels/marble1.jpg" onmouseover="stop()" onmouseout="tick()">
+            <img src="./marbels/marble1.jpg" onmouseover="stop()" onmouseout="tick()">
+            <img src="./marbels/marble1.jpg" onmouseover="stop()" onmouseout="tick()">
+            <script>
+                var ticker;
+                var pic = 1;
+                
+                tick();
+                
+                function tick(){
+                ticker = setInterval(function(){
+                    if(pic==0) {document.querySelectorAll("img")[4].src="./marbels/marble1.jpg";}
+                    else {document.querySelectorAll("img")[pic-1].src="./marbels/marble1.jpg";}
+                    document.querySelectorAll("img")[pic].src="./marbels/marble3.jpg";
+                    pic++;
+                    pic%=5;
+                },1000);
+                }
+                
+                function stop(){
+                    clearInterval(ticker);
+                }
+            </script>
+        </div>
+    </body>
+</html>
