@@ -38,23 +38,25 @@
             var slidesh;
             
                 function slideshow(){
-                stop();
-                flag = true;
-                //slidesh = setInterval(function(){
-                slidesh = setTimeout(function(){    
-                pic++;
-                if(pic>6) {pic = 1;}
-                document.querySelector("#img").src =("./Slideshow/"+pic+".jpg");
-                slideshow();
-            },1000);
+                //stop();
+                if(!flag){
+                    flag = true;
+                    //slidesh = setTimeout(function(){    
+                    slidesh = setInterval(function(){
+                    pic++;
+                    if(pic>6) {pic = 1;}
+                    document.querySelector("#img").src =("./Slideshow/"+pic+".jpg");
                     //slideshow();
+                    },1000);
                 }
+                    //slideshow();
+            }
             
             function stop(){
                 if(flag){
                     flag = false;
-                    clearTimeout(slidesh);
-                    //clearInterval(slidesh);
+                    //clearTimeout(slidesh);
+                    clearInterval(slidesh);
                 }
             }
         </script>
